@@ -310,10 +310,12 @@
 		padding: 0.7rem;
 		gap: 0.4rem;
 		overflow: hidden;
+		scrollbar-width: none;
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.4s ease;
 	}
+	.about-panel::-webkit-scrollbar { display: none; }
 	.about-panel.visible { opacity: 1; pointer-events: auto; }
 
 	.about-panel h2 {
@@ -340,6 +342,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		overflow: hidden;
+		scrollbar-width: none;
 		padding: 0.85rem;
 		opacity: 0;
 		pointer-events: none;
@@ -649,7 +653,10 @@
 			top: 50%; left: 50%;
 			padding: 1.2rem;
 			gap: 0.8rem;
+			overflow: hidden;
+			scrollbar-width: none;
 		}
+		.about-panel::-webkit-scrollbar { display: none; }
 		.about-panel h2 { font-size: 1.6rem; }
 		.about-panel p { font-size: 0.85rem; }
 
