@@ -33,6 +33,50 @@
 			</form>
 		</div>
 
+		<!-- Projects list page -->
+		<button class="back-btn-projects" id="back-btn-projects">&#8592;</button>
+		<div class="projects-list" id="projects-list">
+			<a href="#" class="project-title" id="trespass-btn">Trespass</a>
+		</div>
+
+		<!-- Trespass grid -->
+		<button class="back-btn-grid" id="back-btn-grid">&#8592;</button>
+		<div class="trespass-grid" id="trespass-grid">
+			<div class="credits-bar">
+				<div class="credits-track">
+					LAURA ALVAREZ [DIRECTOR] / ALEX BORGER [ASSISTANT DIRECTOR] / LAURA ALVAREZ [PRODUCER] / ADRIANA DONCA [PRODUCER] / ISAAC CARPENTER [PRODUCTION ASSISTANT] / GEFFEN SHICHOR [DIRECTOR OF PHOTOGRAPHY] / JAVIER VIZARRETA [1ST AC] / KATERINA KAMYSHEVA [2ND AC] / SASHA ALAPUTINA [2ND AC] / NICO CAUTON [GAFFER] / JIRI BALCAR [STEADY CAM OPERATOR] / JIRI BALCAR [KEY GRIP] / ISAAC BARRESI [GRIP] / WILSON SANTOS ESTRADA [GRIP] / JONATHAN HORNBY [GRIP] / GIULIO GINESI [GRIP] / SHAE WELSH [BEST BOY ELECTRIC] / ADRIANA DONCA [PRODUCTION DESIGNER] / JACK LONDON FREEDMAN [ART DIRECTOR / HEAD CARPENTER] / ERON KUMAR [SET DRESSER] / LUIS GARCIA GRECH [SET DRESSER & AI DESIGN] / NATALIA GARCIA [STYLING] / DAVID DADON [PRODUCTION SOUND] / KASIEMBA OKEYO [PRODUCTION SOUND] / DIMITRIOS ASTRANTINIS [SOUND DESIGN & POST PRODUCTION] / NONDAS SAPIDIS [COLORIST] / ANNIKA HAUTMANN [SALOME] / STA SBRASKI [JOHANNA] / SPECIAL THANKS / EMIL TATEVOSIAN / LIAM YOUNG / ALEXEY MARFIN / ORIN TORATI / ADRIAN DONCA / MELINA DONCA / GABRIELA STEFANIA DONCA / ANA MARIA CADENA / ORLANDO RODRIGUEZ / OLGA LUCIA CADENA / LEONARDO ALVAREZ / SCI-ARC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					LAURA ALVAREZ [DIRECTOR] / ALEX BORGER [ASSISTANT DIRECTOR] / LAURA ALVAREZ [PRODUCER] / ADRIANA DONCA [PRODUCER] / ISAAC CARPENTER [PRODUCTION ASSISTANT] / GEFFEN SHICHOR [DIRECTOR OF PHOTOGRAPHY] / JAVIER VIZARRETA [1ST AC] / KATERINA KAMYSHEVA [2ND AC] / SASHA ALAPUTINA [2ND AC] / NICO CAUTON [GAFFER] / JIRI BALCAR [STEADY CAM OPERATOR] / JIRI BALCAR [KEY GRIP] / ISAAC BARRESI [GRIP] / WILSON SANTOS ESTRADA [GRIP] / JONATHAN HORNBY [GRIP] / GIULIO GINESI [GRIP] / SHAE WELSH [BEST BOY ELECTRIC] / ADRIANA DONCA [PRODUCTION DESIGNER] / JACK LONDON FREEDMAN [ART DIRECTOR / HEAD CARPENTER] / ERON KUMAR [SET DRESSER] / LUIS GARCIA GRECH [SET DRESSER & AI DESIGN] / NATALIA GARCIA [STYLING] / DAVID DADON [PRODUCTION SOUND] / KASIEMBA OKEYO [PRODUCTION SOUND] / DIMITRIOS ASTRANTINIS [SOUND DESIGN & POST PRODUCTION] / NONDAS SAPIDIS [COLORIST] / ANNIKA HAUTMANN [SALOME] / STA SBRASKI [JOHANNA] / SPECIAL THANKS / EMIL TATEVOSIAN / LIAM YOUNG / ALEXEY MARFIN / ORIN TORATI / ADRIAN DONCA / MELINA DONCA / GABRIELA STEFANIA DONCA / ANA MARIA CADENA / ORLANDO RODRIGUEZ / OLGA LUCIA CADENA / LEONARDO ALVAREZ / SCI-ARC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+			</div>
+			<img class="photo" src="/assets/STILL01.jpg" />
+			<img class="photo" src="/assets/STILL02.jpg" />
+			<img class="photo" src="/assets/STILL03.jpg" />
+			<img class="photo" src="/assets/STILL04.jpg" />
+			<img class="photo" src="/assets/STILL05.jpg" />
+			<img class="photo" src="/assets/STILL06.jpg" />
+			<img class="photo photo-wide" src="/assets/STILL07.jpg" />
+			<div class="grid-description">
+				<h3>Trespass (2026)</h3>
+				<div class="grid-credits">
+					<span><strong>[Director]</strong> Laura Alvarez</span>
+					<span><strong>[Cinematographer]</strong> Geffen Shichor</span>
+					<span><strong>[Production Designer]</strong> Adriana Donca</span>
+				</div>
+			</div>
+		</div><!-- end trespass-grid -->
+
+		<!-- Project detail page -->
+		<div class="project-detail" id="project-detail">
+			<button class="back-btn-detail" id="back-btn-detail">&#8592;</button>
+			<div class="detail-image-wrap">
+				<img class="detail-img" id="detail-img" src="" />
+			</div>
+			<div class="detail-info">
+				<h2 id="detail-title"></h2>
+				<p id="detail-desc"></p>
+			</div>
+		</div>
+
 		<!-- White quadrant overlays -->
 		<div class="quad quad-tl" id="quad-tl"></div>
 		<div class="quad quad-tr" id="quad-tr"></div>
@@ -43,7 +87,7 @@
 
 		<nav class="menu" id="menu">
 			<a href="#" id="about-btn">About</a>
-			<a href="/my-portfolio/work/">Projects</a>
+			<a href="#" id="projects-btn">Projects</a>
 			<a href="#" id="contact-btn">Contact</a>
 		</nav>
 
@@ -76,6 +120,13 @@
 				document.getElementById('menu').classList.add('visible');
 			});
 
+			document.getElementById('about-btn').addEventListener('click', function (e) {
+				e.preventDefault();
+				document.getElementById('menu').classList.remove('visible');
+				document.getElementById('about-panel').classList.add('visible');
+				document.getElementById('back-btn').classList.add('visible');
+			});
+
 			document.getElementById('contact-form').addEventListener('submit', async function (e) {
 				e.preventDefault();
 				const form = e.target;
@@ -103,11 +154,70 @@
 				document.getElementById('menu').classList.add('visible');
 			});
 
-			document.getElementById('about-btn').addEventListener('click', function (e) {
+			// Projects list
+			document.getElementById('projects-btn').addEventListener('click', function (e) {
 				e.preventDefault();
 				document.getElementById('menu').classList.remove('visible');
-				document.getElementById('about-panel').classList.add('visible');
-				document.getElementById('back-btn').classList.add('visible');
+				document.getElementById('projects-list').classList.add('visible');
+				document.getElementById('back-btn-projects').classList.add('visible');
+			});
+
+			document.getElementById('back-btn-projects').addEventListener('click', function () {
+				document.getElementById('projects-list').classList.remove('visible');
+				document.getElementById('back-btn-projects').classList.remove('visible');
+				document.getElementById('menu').classList.add('visible');
+			});
+
+			// Trespass grid
+			document.getElementById('trespass-btn').addEventListener('click', function (e) {
+				e.preventDefault();
+				document.getElementById('projects-list').classList.remove('visible');
+				document.getElementById('back-btn-projects').classList.remove('visible');
+				document.getElementById('trespass-grid').classList.add('visible');
+				document.getElementById('back-btn-grid').classList.add('visible');
+			});
+
+			document.getElementById('back-btn-grid').addEventListener('click', function () {
+				document.getElementById('trespass-grid').classList.remove('visible');
+				document.getElementById('back-btn-grid').classList.remove('visible');
+				document.getElementById('projects-list').classList.add('visible');
+				document.getElementById('back-btn-projects').classList.add('visible');
+			});
+
+			// Project descriptions
+			const trespassDesc = 'A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.\n\nShort Film — Coming Soon, 2026';
+			const projects = {
+				'STILL01.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL02.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL03.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL04.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL05.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL06.jpg': { title: 'Trespass', desc: trespassDesc },
+				'STILL07.jpg': { title: 'Trespass', desc: trespassDesc },
+			};
+
+			const detail = document.getElementById('project-detail');
+			const detailImg = document.getElementById('detail-img');
+			const detailTitle = document.getElementById('detail-title');
+			const detailDesc = document.getElementById('detail-desc');
+
+			document.querySelectorAll('.photo').forEach(function (img) {
+				img.addEventListener('click', function () {
+					const filename = this.src.split('/').pop();
+					const info = projects[filename] || { title: '', desc: '' };
+					detailImg.src = this.src;
+					detailTitle.textContent = info.title;
+					detailDesc.textContent = info.desc;
+					document.getElementById('trespass-grid').classList.remove('visible');
+					document.getElementById('back-btn-grid').classList.remove('visible');
+					detail.classList.add('open');
+				});
+			});
+
+			document.getElementById('back-btn-detail').addEventListener('click', function () {
+				detail.classList.remove('open');
+				document.getElementById('trespass-grid').classList.add('visible');
+				document.getElementById('back-btn-grid').classList.add('visible');
 			});
 		</script>
 	</body>
@@ -129,10 +239,9 @@
 		overflow: hidden;
 	}
 
-	.back-btn {
+	/* ── Back buttons ── */
+	.back-btn, .back-btn-contact, .back-btn-projects {
 		position: fixed;
-		top: calc(25% - 7vw - 1.8rem);
-		left: calc(25% - 7vw);
 		font-family: 'Montserrat', sans-serif;
 		font-size: 1.2rem;
 		font-weight: 700;
@@ -147,22 +256,26 @@
 		z-index: 25;
 		line-height: 1;
 	}
+	.back-btn          { top: calc(25% - 7vw - 1.8rem); left: calc(25% - 7vw); }
+	.back-btn-contact  { top: calc(50% - 7.5vw - 1.8rem); left: calc(50% - 7.5vw); }
+	.back-btn-projects { top: 1.5rem; left: 1.5rem; }
+	.back-btn-grid     { top: 1.5rem; left: 1.5rem; }
 
-	.back-btn.visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
+	.back-btn.visible,
+	.back-btn-contact.visible,
+	.back-btn-projects.visible,
+	.back-btn-grid.visible { opacity: 1; pointer-events: auto; }
 
-	.back-btn:hover {
-		opacity: 0.5;
-	}
+	.back-btn:hover,
+	.back-btn-contact:hover,
+	.back-btn-projects:hover,
+	.back-btn-grid:hover { opacity: 0.5; }
 
+	/* ── About panel ── */
 	.about-panel {
 		position: fixed;
-		top: 25%;
-		left: 25%;
-		width: 14vw;
-		height: 14vw;
+		top: 25%; left: 25%;
+		width: 14vw; height: 14vw;
 		transform: translate(-50%, -50%);
 		background: #000;
 		z-index: 20;
@@ -176,74 +289,26 @@
 		pointer-events: none;
 		transition: opacity 0.4s ease;
 	}
-
-	.about-panel.visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
+	.about-panel.visible { opacity: 1; pointer-events: auto; }
 
 	.about-panel h2 {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1.8rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: #fff;
+		font-size: 1.8rem; font-weight: 700;
+		letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
 	}
-
-	.about-panel h3 {
-		font-family: 'Montserrat', sans-serif;
-		font-size: 0.65rem;
-		font-weight: 300;
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		color: #fff;
-		margin-top: -0.3rem;
-		margin-bottom: 0.6rem;
-	}
-
 	.about-panel p {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.72rem;
-		font-weight: 300;
+		font-size: 0.72rem; font-weight: 300;
 		letter-spacing: 0.03em;
-		color: rgba(255, 255, 255, 0.7);
+		color: rgba(255,255,255,0.7);
 		line-height: 1.7;
 	}
 
-	.back-btn-contact {
-		position: fixed;
-		top: calc(50% - 7.5vw - 1.8rem);
-		left: calc(50% - 7.5vw);
-		font-family: 'Montserrat', sans-serif;
-		font-size: 1.2rem;
-		font-weight: 700;
-		color: #000;
-		background: none;
-		border: none;
-		-webkit-text-stroke: 0.5px #000;
-		cursor: pointer;
-		opacity: 0;
-		pointer-events: none;
-		transition: opacity 0.4s ease;
-		z-index: 25;
-		line-height: 1;
-	}
-
-	.back-btn-contact.visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	.back-btn-contact:hover { opacity: 0.5; }
-
-	/* Contact panel — centered on page */
+	/* ── Contact panel ── */
 	.contact-panel {
 		position: fixed;
-		top: 50%;
-		left: 50%;
-		width: 15vw;
-		height: 15vw;
+		top: 50%; left: 50%;
+		width: 15vw; height: 15vw;
 		transform: translate(-50%, -50%);
 		background: #000;
 		z-index: 20;
@@ -255,84 +320,236 @@
 		pointer-events: none;
 		transition: opacity 0.4s ease;
 	}
-
-	.contact-panel.visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
+	.contact-panel.visible { opacity: 1; pointer-events: auto; }
 
 	.contact-panel h2 {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1.8rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: #fff;
+		font-size: 1.8rem; font-weight: 700;
+		letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
 	}
-
 	.contact-panel form {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		flex: 1;
-		margin-top: 0.8rem;
+		display: flex; flex-direction: column;
+		gap: 0.5rem; flex: 1; margin-top: 0.8rem;
 	}
-
-	.contact-panel input,
-	.contact-panel textarea {
-		background: none;
-		border: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	.contact-panel input, .contact-panel textarea {
+		background: none; border: none;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
 		color: #fff;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.6rem;
-		font-weight: 300;
-		letter-spacing: 0.1em;
-		padding: 0.3rem 0;
-		outline: none;
-		width: 100%;
+		font-size: 0.6rem; font-weight: 300;
+		letter-spacing: 0.1em; padding: 0.3rem 0;
+		outline: none; width: 100%;
 	}
-
-	.contact-panel textarea {
-		flex: 1;
-		resize: none;
-	}
-
+	.contact-panel textarea { flex: 1; resize: none; }
 	.contact-panel input::placeholder,
 	.contact-panel textarea::placeholder {
-		color: rgba(255, 255, 255, 0.4);
-		text-transform: uppercase;
+		color: rgba(255,255,255,0.4); text-transform: uppercase;
 	}
-
 	.contact-panel button {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.6rem;
-		font-weight: 700;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		color: #fff;
-		background: none;
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		padding: 0.4rem;
-		cursor: pointer;
+		font-size: 0.6rem; font-weight: 700;
+		letter-spacing: 0.2em; text-transform: uppercase;
+		color: #fff; background: none;
+		border: 1px solid rgba(255,255,255,0.4);
+		padding: 0.4rem; cursor: pointer;
 		transition: background 0.2s, color 0.2s;
 	}
-
-	.contact-panel button:hover {
-		background: #fff;
-		color: #000;
-	}
-
+	.contact-panel button:hover { background: #fff; color: #000; }
 	.form-success {
 		display: none;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.6rem;
-		font-weight: 300;
+		font-size: 0.6rem; font-weight: 300;
+		letter-spacing: 0.1em; color: #fff; text-transform: uppercase;
+	}
+
+	/* ── Projects list ── */
+	.projects-list {
+		position: fixed;
+		inset: 0;
+		background: #fff;
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		padding: 6vw;
+		z-index: 15;
+	}
+	.projects-list.visible { display: flex; }
+
+	.project-title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3rem;
+		font-weight: 700;
 		letter-spacing: 0.1em;
-		color: #fff;
+		text-transform: uppercase;
+		color: #000;
+		text-decoration: none;
+		display: inline-block;
+	}
+	.project-title:hover { opacity: 0.5; }
+
+	/* ── Credits bar ── */
+	.credits-bar {
+		grid-column: 1 / -1;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 0.4rem 0;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		margin-bottom: 0.5rem;
+	}
+
+	.credits-track {
+		display: inline-block;
+		animation: scroll-credits 300s linear infinite;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.85rem;
+		font-weight: 400;
+		letter-spacing: 0.12em;
+		color: #000;
 		text-transform: uppercase;
 	}
 
+	@keyframes scroll-credits {
+		0%   { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+
+	/* ── Trespass grid ── */
+	.trespass-grid {
+		position: fixed;
+		inset: 0;
+		background: #fff;
+		display: none;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.5vw;
+		padding: 4vw;
+		align-content: center;
+		z-index: 15;
+		overflow-y: auto;
+	}
+	.trespass-grid.visible { display: grid; }
+
+	.photo {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+	}
+	.photo:hover { opacity: 0.8; }
+
+	.grid-description {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 0;
+		padding: 1rem;
+		overflow: hidden;
+	}
+
+	.grid-description h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.6rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgba(0,0,0,0.55);
+	}
+
+	.grid-credits {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.grid-credits span {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 300;
+		letter-spacing: 0.08em;
+		color: rgba(0,0,0,0.5);
+		text-transform: uppercase;
+	}
+
+	.grid-description p {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.85rem;
+		font-weight: 300;
+		letter-spacing: 0.03em;
+		color: rgba(255,255,255,0.7);
+		line-height: 1.7;
+	}
+
+	.grid-description > span {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.85rem;
+		font-weight: 400;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.4);
+	}
+
+	.photo-wide {
+		aspect-ratio: 1600 / 864;
+		object-fit: cover;
+	}
+
+	/* ── Project detail ── */
+	.project-detail {
+		position: fixed;
+		inset: 0;
+		background: #fff;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		gap: 4vw;
+		padding: 4vw;
+		z-index: 50;
+	}
+	.project-detail.open { display: flex; }
+
+	.back-btn-detail {
+		position: fixed;
+		top: 1.5rem; left: 1.5rem;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.2rem; font-weight: 700;
+		color: #000; background: none; border: none;
+		-webkit-text-stroke: 0.5px #000;
+		cursor: pointer; z-index: 55;
+	}
+	.back-btn-detail:hover { opacity: 0.5; }
+
+	.detail-image-wrap {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	.detail-img {
+		max-height: 80vh;
+		max-width: 50vw;
+		object-fit: contain;
+	}
+
+	.detail-info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		max-width: 30vw;
+	}
+	.detail-info h2 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.8rem; font-weight: 700;
+		letter-spacing: 0.1em; text-transform: uppercase; color: #000;
+	}
+	.detail-info p {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.75rem; font-weight: 300;
+		letter-spacing: 0.05em; color: rgba(0,0,0,0.6);
+		line-height: 1.8;
+	}
+
+	/* ── Quad overlays ── */
 	.quad {
 		position: fixed;
 		background: #fff;
@@ -341,75 +558,56 @@
 		transition: opacity 0.4s ease;
 		pointer-events: none;
 	}
-
-	.quad.visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
+	.quad.visible { opacity: 1; pointer-events: auto; }
 	.quad-tl { top: 0; left: 0; width: 50%; height: 50%; }
 	.quad-tr { top: 0; left: 50%; width: 50%; height: 50%; }
 	.quad-bl { top: 50%; left: 0; width: 50%; height: 50%; }
 	.quad-br { top: 50%; left: 50%; width: 50%; height: 50%; }
 
+	/* ── Name ── */
 	.name {
 		position: fixed;
-		top: 50%;
-		left: 50%;
+		top: 50%; left: 50%;
 		transform: translate(-50%, -50%);
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1.235rem;
-		font-weight: 700;
-		letter-spacing: 0.3em;
-		text-transform: uppercase;
-		color: #000;
-		text-decoration: none;
-		white-space: nowrap;
-		z-index: 5;
-		cursor: pointer;
+		font-size: 1.235rem; font-weight: 700;
+		letter-spacing: 0.3em; text-transform: uppercase;
+		color: #000; text-decoration: none;
+		white-space: nowrap; z-index: 5; cursor: pointer;
 	}
-
 	.name:hover { opacity: 0.6; }
 
+	/* ── Menu ── */
 	.menu {
 		display: none;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
 		position: fixed;
-		top: 25%;
-		left: 75%;
+		top: 25%; left: 75%;
 		transform: translate(-50%, -50%);
-		width: 15.5vw;
-		height: 15.5vw;
+		width: 15.5vw; height: 15.5vw;
 		background: #000;
 		padding: 1.5rem;
 		z-index: 5;
 	}
-
 	.menu.visible { display: flex; }
-
 	.menu a {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1.8rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: #fff;
-		text-decoration: none;
+		font-size: 1.8rem; font-weight: 700;
+		letter-spacing: 0.1em; text-transform: uppercase;
+		color: #fff; text-decoration: none;
 	}
-
 	.menu a:hover { opacity: 0.6; }
 
+	/* ── Clock ── */
 	.clock {
 		position: fixed;
-		bottom: 1.5rem;
-		right: 1.5rem;
+		bottom: 1.5rem; right: 1.5rem;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.8rem;
-		font-weight: 300;
+		font-size: 0.8rem; font-weight: 300;
 		letter-spacing: 0.15em;
-		color: rgba(0, 0, 0, 0.5);
+		color: rgba(0,0,0,0.5);
 		z-index: 10;
 	}
 </style>
