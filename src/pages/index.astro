@@ -55,18 +55,16 @@
 			</div>
 		</div>
 
-		<!-- Trespass intro overlay -->
-		<div class="trespass-intro" id="trespass-intro">
-			<div class="trespass-intro-content">
-				<h2 class="trespass-intro-title">Trespass</h2>
-				<p class="trespass-intro-desc">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
-				<p class="trespass-intro-sub">Short Film — Coming Soon, 2026</p>
-			</div>
-		</div>
-
 		<!-- Trespass grid -->
 		<button class="back-btn-grid" id="back-btn-grid">&#8592;</button>
 		<div class="trespass-grid" id="trespass-grid">
+			<div class="trespass-header">
+				<h2 class="trespass-header-title">Trespass</h2>
+				<div class="trespass-header-right">
+					<p class="trespass-header-desc">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
+					<p class="trespass-header-sub">Short Film — Coming Soon, 2026</p>
+				</div>
+			</div>
 			<div class="credits-bar">
 				<div class="credits-track">
 					LAURA ALVAREZ [DIRECTOR] / ALEX BORGER [ASSISTANT DIRECTOR] / LAURA ALVAREZ [PRODUCER] / ADRIANA DONCA [PRODUCER] / ISAAC CARPENTER [PRODUCTION ASSISTANT] / GEFFEN SHICHOR [DIRECTOR OF PHOTOGRAPHY] / JAVIER VIZARRETA [1ST AC] / KATERINA KAMYSHEVA [2ND AC] / SASHA ALAPUTINA [2ND AC] / NICO CAUTON [GAFFER] / JIRI BALCAR [STEADY CAM OPERATOR] / JIRI BALCAR [KEY GRIP] / ISAAC BARRESI [GRIP] / WILSON SANTOS ESTRADA [GRIP] / JONATHAN HORNBY [GRIP] / GIULIO GINESI [GRIP] / SHAE WELSH [BEST BOY ELECTRIC] / ADRIANA DONCA [PRODUCTION DESIGNER] / JACK LONDON FREEDMAN [ART DIRECTOR / HEAD CARPENTER] / ERON KUMAR [SET DRESSER] / LUIS GARCIA GRECH [SET DRESSER & AI DESIGN] / NATALIA GARCIA [STYLING] / DAVID DADON [PRODUCTION SOUND] / KASIEMBA OKEYO [PRODUCTION SOUND] / DIMITRIOS ASTRANTINIS [SOUND DESIGN & POST PRODUCTION] / ANNIKA HAUTMANN [SALOME] / STA SBRASKI [JOHANNA] / SPECIAL THANKS / EMIL TATEVOSIAN / LIAM YOUNG / ALEXEY MARFIN / ORIN TORATI / ADRIAN DONCA / MELINA DONCA / GABRIELA STEFANIA DONCA / ANA MARIA CADENA / ORLANDO RODRIGUEZ / OLGA LUCIA CADENA / LEONARDO ALVAREZ / SCI-ARC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -223,22 +221,16 @@
 				document.getElementById('menu').classList.add('visible');
 			});
 
-			// Trespass intro → grid
+			// Trespass grid
 			document.getElementById('trespass-btn').addEventListener('click', function () {
 				document.getElementById('projects-list').classList.remove('visible');
 				document.getElementById('back-btn-projects').classList.remove('visible');
-				document.getElementById('trespass-intro').classList.add('visible');
-				document.getElementById('back-btn-grid').classList.add('visible');
-			});
-
-			document.getElementById('trespass-intro').addEventListener('click', function () {
-				document.getElementById('trespass-intro').classList.remove('visible');
 				document.getElementById('trespass-grid').classList.add('visible');
+				document.getElementById('back-btn-grid').classList.add('visible');
 			});
 
 			document.getElementById('back-btn-grid').addEventListener('click', function () {
 				document.getElementById('trespass-grid').classList.remove('visible');
-				document.getElementById('trespass-intro').classList.remove('visible');
 				document.getElementById('back-btn-grid').classList.remove('visible');
 				document.getElementById('projects-list').classList.add('visible');
 				document.getElementById('back-btn-projects').classList.add('visible');
@@ -563,52 +555,53 @@
 		100% { transform: translateX(-50%); }
 	}
 
-	/* ── Trespass intro ── */
-	.trespass-intro {
-		position: fixed;
-		inset: 0;
-		background: #000 url('/assets/PROJECTS_BACKGROUND_IMAGE.jpg') center/cover no-repeat;
-		z-index: 16;
-		display: none;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-	}
-	.trespass-intro.visible { display: flex; }
-
-	.trespass-intro-content {
-		max-width: 42vw;
+	/* ── Trespass header ── */
+	.trespass-header {
+		grid-column: 1 / -1;
 		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		text-align: left;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 4vw;
+		padding: 1.5rem 0 1rem;
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		margin-bottom: 0.5rem;
 	}
 
-	.trespass-intro-title {
+	.trespass-header-title {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 3.5rem;
+		font-size: 2.5rem;
 		font-weight: 700;
 		letter-spacing: 0.15em;
 		text-transform: uppercase;
 		color: #fff;
+		white-space: nowrap;
+		flex-shrink: 0;
 	}
 
-	.trespass-intro-desc {
-		font-family: 'Montserrat', sans-serif;
-		font-size: 0.9rem;
-		font-weight: 300;
-		letter-spacing: 0.04em;
-		color: rgba(255,255,255,0.8);
-		line-height: 1.9;
+	.trespass-header-right {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		padding-top: 0.3rem;
 	}
 
-	.trespass-intro-sub {
+	.trespass-header-desc {
 		font-family: 'Montserrat', sans-serif;
 		font-size: 0.75rem;
+		font-weight: 300;
+		letter-spacing: 0.03em;
+		color: rgba(255,255,255,0.65);
+		line-height: 1.8;
+		max-width: 55ch;
+	}
+
+	.trespass-header-sub {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.65rem;
 		font-weight: 400;
 		letter-spacing: 0.15em;
 		text-transform: uppercase;
-		color: rgba(255,255,255,0.5);
+		color: rgba(255,255,255,0.4);
 	}
 
 	/* ── Trespass grid ── */
