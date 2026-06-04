@@ -130,9 +130,17 @@
 			});
 
 			document.getElementById('back-btn').addEventListener('click', function () {
-				document.getElementById('about-panel').classList.remove('visible');
+				const panel = document.getElementById('about-panel');
+				panel.classList.remove('visible', 'expanded');
+				document.querySelector('#about-panel .panel-expand').textContent = '⤢';
 				document.getElementById('back-btn').classList.remove('visible');
 				document.getElementById('menu').classList.add('visible');
+			});
+
+			document.querySelector('#about-panel .panel-expand').addEventListener('click', function () {
+				const panel = document.getElementById('about-panel');
+				panel.classList.toggle('expanded');
+				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
 			});
 
 			document.getElementById('about-btn').addEventListener('click', function (e) {
@@ -164,9 +172,17 @@
 			});
 
 			document.getElementById('back-btn-contact').addEventListener('click', function () {
-				document.getElementById('contact-panel').classList.remove('visible');
+				const panel = document.getElementById('contact-panel');
+				panel.classList.remove('visible', 'expanded');
+				document.querySelector('#contact-panel .panel-expand').textContent = '⤢';
 				document.getElementById('back-btn-contact').classList.remove('visible');
 				document.getElementById('menu').classList.add('visible');
+			});
+
+			document.querySelector('#contact-panel .panel-expand').addEventListener('click', function () {
+				const panel = document.getElementById('contact-panel');
+				panel.classList.toggle('expanded');
+				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
 			});
 
 			// Projects list
@@ -318,6 +334,13 @@
 		transition: opacity 0.4s ease;
 	}
 	.about-panel.visible { opacity: 1; pointer-events: auto; }
+	.about-panel.expanded {
+		width: 28vw;
+		height: auto;
+		max-height: 75vh;
+		overflow-y: auto;
+		clip-path: none;
+	}
 
 	.about-panel h2 {
 		font-family: 'Montserrat', sans-serif;
@@ -351,6 +374,13 @@
 		transition: opacity 0.4s ease;
 	}
 	.contact-panel.visible { opacity: 1; pointer-events: auto; }
+	.contact-panel.expanded {
+		width: 28vw;
+		height: auto;
+		max-height: 75vh;
+		overflow-y: auto;
+		clip-path: none;
+	}
 
 	.contact-panel h2 {
 		font-family: 'Montserrat', sans-serif;
@@ -662,6 +692,18 @@
 			scrollbar-width: none;
 		}
 		.about-panel::-webkit-scrollbar { display: none; }
+		.about-panel.expanded {
+			width: 88vw;
+			height: auto;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
+		.contact-panel.expanded {
+			width: 88vw;
+			height: auto;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
 		.about-panel h2 { font-size: 1.6rem; }
 		.about-panel p { font-size: 0.85rem; }
 
