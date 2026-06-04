@@ -12,11 +12,15 @@
 		<!-- Back arrow for about panel -->
 		<button class="back-btn" id="back-btn">&#8592;</button>
 
-		<!-- About panel (black square) -->
+		<!-- About panel -->
 		<div class="about-panel" id="about-panel">
-			<h2>Adriana Donca</h2>
-			<p>Adriana Donca is a production designer and producer whose work bridges architecture and cinematic storytelling. Based in Los Angeles, she studied Architecture at Aristotle University of Thessaloniki and holds a Master of Science in Fiction and Entertainment from SCI-Arc (Southern California Institute of Architecture).</p>
-			<span class="panel-expand">⤢</span>
+			<div class="about-text">
+				<h2>Adriana Donca</h2>
+				<p>Adriana Donca is a production designer and producer whose work bridges architecture and cinematic storytelling. Based in Los Angeles, she studied Architecture at Aristotle University of Thessaloniki and holds a Master of Science in Fiction and Entertainment from SCI-Arc (Southern California Institute of Architecture).</p>
+			</div>
+			<div class="about-cv">
+				<img src="/assets/cv.png" alt="Adriana Donca CV" />
+			</div>
 		</div>
 
 		<!-- Back arrow for contact panel -->
@@ -146,17 +150,9 @@
 			});
 
 			document.getElementById('back-btn').addEventListener('click', function () {
-				const panel = document.getElementById('about-panel');
-				panel.classList.remove('visible', 'expanded');
-				document.querySelector('#about-panel .panel-expand').textContent = '⤢';
+				document.getElementById('about-panel').classList.remove('visible');
 				document.getElementById('back-btn').classList.remove('visible');
 				document.getElementById('menu').classList.add('visible');
-			});
-
-			document.querySelector('#about-panel .panel-expand').addEventListener('click', function () {
-				const panel = document.getElementById('about-panel');
-				panel.classList.toggle('expanded');
-				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
 			});
 
 			document.getElementById('about-btn').addEventListener('click', function (e) {
@@ -358,44 +354,55 @@
 	/* ── About panel ── */
 	.about-panel {
 		position: fixed;
-		top: 50%; left: 50%;
-		width: 11.86vw; height: 11.86vw;
-		transform: translate(-50%, -50%) translateZ(0);
-		-webkit-transform: translate(-50%, -50%) translateZ(0);
-		background: #fff;
+		inset: 0;
+		background: #000;
 		z-index: 20;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		padding: 0.7rem;
-		gap: 0.4rem;
-		overflow: hidden;
+		display: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 6vw;
+		padding: 6vw;
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.4s ease;
 	}
-	.about-panel.visible { opacity: 1; pointer-events: auto; }
-	.about-panel { transition: opacity 0.4s ease, width 0.3s ease, height 0.3s ease; }
-	.about-panel.expanded {
-		width: 17.6vw;
-		height: 17.6vw;
-		overflow-y: auto;
-		clip-path: none;
-		scrollbar-width: none;
+	.about-panel.visible { display: flex; opacity: 1; pointer-events: auto; }
+
+	.about-text {
+		flex: 0 0 auto;
+		max-width: 28vw;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
-	.about-panel.expanded::-webkit-scrollbar { display: none; }
 
 	.about-panel h2 {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1.8rem; font-weight: 700;
-		letter-spacing: 0.1em; text-transform: uppercase; color: #000;
+		font-size: 2.4rem; font-weight: 700;
+		letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
 	}
 	.about-panel p {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 0.72rem; font-weight: 300;
+		font-size: 0.85rem; font-weight: 300;
 		letter-spacing: 0.03em;
-		color: rgba(0,0,0,0.7);
-		line-height: 1.7;
+		color: rgba(255,255,255,0.7);
+		line-height: 1.9;
+	}
+
+	.about-cv {
+		flex: 0 0 auto;
+		max-height: 85vh;
+		overflow-y: auto;
+		scrollbar-width: none;
+	}
+	.about-cv::-webkit-scrollbar { display: none; }
+	.about-cv img {
+		display: block;
+		max-height: 85vh;
+		width: auto;
+		max-width: 45vw;
+		object-fit: contain;
 	}
 
 	/* ── Contact panel ── */
@@ -797,20 +804,13 @@
 		.menu a { font-size: 2.2rem; }
 
 		.about-panel {
-			width: 70vw; height: 70vw;
-			top: 50%; left: 50%;
-			padding: 1.2rem;
-			gap: 0.8rem;
-			overflow: hidden;
-			scrollbar-width: none;
-		}
-		.about-panel::-webkit-scrollbar { display: none; }
-		.about-panel.expanded, .contact-panel.expanded {
-			width: 88vw;
-			height: 88vw;
+			flex-direction: column;
+			padding: 5rem 2rem 2rem;
+			gap: 2rem;
 			overflow-y: auto;
-			scrollbar-width: none;
 		}
+		.about-text { max-width: 100%; }
+		.about-cv img { max-width: 100%; max-height: none; }
 		.about-panel h2 { font-size: 1.6rem; }
 		.about-panel p { font-size: 0.85rem; }
 
