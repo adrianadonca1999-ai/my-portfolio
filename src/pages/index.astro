@@ -17,6 +17,7 @@
 			<h2>Adriana Donca</h2>
 			<p>Adriana Donca is a production designer and architect based between architecture, film, and visual storytelling. She studied Architecture in Greece and completed the Master of Science in Fiction and Entertainment at SCI-Arc, specializing in production design.</p>
 			<p>Her work focuses on creating immersive visual worlds for film and narrative media. She has collaborated with directors on short films and worked as an art director, developing concepts, sets, and visual environments that support storytelling through space, atmosphere, and design.</p>
+			<span class="panel-expand">⤢</span>
 		</div>
 
 		<!-- Back arrow for contact panel -->
@@ -32,6 +33,7 @@
 				<p class="form-success" id="form-success">Message sent!</p>
 				<button type="submit">Send</button>
 			</form>
+			<span class="panel-expand">⤢</span>
 		</div>
 
 		<!-- Projects list page -->
@@ -418,7 +420,8 @@
 		clip-path: inset(0);
 	}
 
-	.project-expand {
+	.project-expand,
+	.panel-expand {
 		position: absolute;
 		bottom: 0.5rem;
 		right: 0.5rem;
@@ -431,7 +434,8 @@
 		opacity: 0.5;
 		transition: opacity 0.2s;
 	}
-	.project-expand:hover { opacity: 1; }
+	.project-expand:hover,
+	.panel-expand:hover { opacity: 1; }
 
 	.project-name {
 		font-size: 1.8rem;
