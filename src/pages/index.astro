@@ -47,7 +47,7 @@
 					<span class="project-name" id="trespass-btn">Trespass</span>
 				</div>
 				<div class="project-title">
-					<span class="project-name">Spermania</span>
+					<span class="project-name" id="spermania-btn">Spermania</span>
 				</div>
 				<div class="project-title">
 					<span class="project-name" id="dance-btn">The Dance of the Seven Veils</span>
@@ -137,6 +137,40 @@
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
 		</div><!-- end dance-grid -->
+
+		<!-- Spermania grid -->
+		<button class="back-btn-grid back-btn-spermania" id="back-btn-spermania">&#8592;</button>
+		<div class="trespass-grid" id="spermania-grid">
+			<div class="trespass-header">
+				<h2 class="trespass-header-title">Spermania</h2>
+				<div class="trespass-header-right">
+					<p class="trespass-header-desc">Coming Soon.</p>
+					<p class="trespass-header-sub">Coming Soon</p>
+				</div>
+			</div>
+			<div class="credits-bar">
+				<div class="credits-track">
+					COMING SOON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMING SOON &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+			</div>
+			<div class="col-header-full">Film Stills</div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+			<div class="photo placeholder"></div>
+		</div><!-- end spermania-grid -->
 
 		<!-- Project detail page -->
 		<div class="project-detail" id="project-detail">
@@ -285,6 +319,21 @@
 				document.getElementById('back-btn-projects').classList.add('visible');
 			});
 
+			// Spermania grid
+			document.getElementById('spermania-btn').addEventListener('click', function () {
+				document.getElementById('projects-list').classList.remove('visible');
+				document.getElementById('back-btn-projects').classList.remove('visible');
+				document.getElementById('spermania-grid').classList.add('visible');
+				document.getElementById('back-btn-spermania').classList.add('visible');
+			});
+
+			document.getElementById('back-btn-spermania').addEventListener('click', function () {
+				document.getElementById('spermania-grid').classList.remove('visible');
+				document.getElementById('back-btn-spermania').classList.remove('visible');
+				document.getElementById('projects-list').classList.add('visible');
+				document.getElementById('back-btn-projects').classList.add('visible');
+			});
+
 			// Project descriptions
 			const trespassDesc = 'A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.\n\nShort Film — Coming Soon, 2026';
 			const projects = {
@@ -378,7 +427,8 @@
 	.back-btn-contact.visible,
 	.back-btn-projects.visible,
 	.back-btn-grid.visible,
-	.back-btn-dance.visible { opacity: 1; pointer-events: auto; }
+	.back-btn-dance.visible,
+	.back-btn-spermania.visible { opacity: 1; pointer-events: auto; }
 
 	.back-btn:hover,
 	.back-btn-contact:hover,
