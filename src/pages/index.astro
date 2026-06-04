@@ -42,8 +42,16 @@
 		<!-- Projects list page -->
 		<button class="back-btn-projects" id="back-btn-projects">&#8592;</button>
 		<div class="projects-list" id="projects-list">
-			<div class="project-title">
-				<span class="project-name" id="trespass-btn">Trespass</span>
+			<div class="projects-row">
+				<div class="project-title">
+					<span class="project-name" id="trespass-btn">Trespass</span>
+				</div>
+				<div class="project-title">
+					<span class="project-name">Spermania</span>
+				</div>
+				<div class="project-title">
+					<span class="project-name">The Dance of the Seven Veils</span>
+				</div>
 			</div>
 		</div>
 
@@ -455,6 +463,13 @@
 		z-index: 15;
 	}
 	.projects-list.visible { display: flex; }
+
+	.projects-row {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 4vw;
+	}
 
 	.project-title {
 		font-family: 'Montserrat', sans-serif;
