@@ -139,23 +139,8 @@
 
 			document.querySelector('#about-panel .panel-expand').addEventListener('click', function () {
 				const panel = document.getElementById('about-panel');
-				if (panel.classList.contains('expanded')) {
-					panel.classList.remove('expanded');
-					panel.style.width = '';
-					panel.style.height = '';
-					this.textContent = '⤢';
-				} else {
-					panel.classList.add('expanded');
-					panel.style.overflow = 'visible';
-					panel.style.height = 'auto';
-					panel.style.width = (panel.offsetWidth * 2.5) + 'px';
-					const h = panel.scrollHeight;
-					const size = Math.max(h, panel.offsetWidth);
-					panel.style.width = size + 'px';
-					panel.style.height = size + 'px';
-					panel.style.overflow = 'hidden';
-					this.textContent = '⤡';
-				}
+				panel.classList.toggle('expanded');
+				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
 			});
 
 			document.getElementById('about-btn').addEventListener('click', function (e) {
@@ -196,23 +181,8 @@
 
 			document.querySelector('#contact-panel .panel-expand').addEventListener('click', function () {
 				const panel = document.getElementById('contact-panel');
-				if (panel.classList.contains('expanded')) {
-					panel.classList.remove('expanded');
-					panel.style.width = '';
-					panel.style.height = '';
-					this.textContent = '⤢';
-				} else {
-					panel.classList.add('expanded');
-					panel.style.overflow = 'visible';
-					panel.style.height = 'auto';
-					panel.style.width = (panel.offsetWidth * 2.5) + 'px';
-					const h = panel.scrollHeight;
-					const size = Math.max(h, panel.offsetWidth);
-					panel.style.width = size + 'px';
-					panel.style.height = size + 'px';
-					panel.style.overflow = 'hidden';
-					this.textContent = '⤡';
-				}
+				panel.classList.toggle('expanded');
+				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
 			});
 
 			// Projects list
@@ -364,7 +334,15 @@
 		transition: opacity 0.4s ease;
 	}
 	.about-panel.visible { opacity: 1; pointer-events: auto; }
-	.about-panel.expanded { clip-path: none; }
+	.about-panel { transition: opacity 0.4s ease, width 0.3s ease, height 0.3s ease; }
+	.about-panel.expanded {
+		width: 25vw;
+		height: 25vw;
+		overflow-y: auto;
+		clip-path: none;
+		scrollbar-width: none;
+	}
+	.about-panel.expanded::-webkit-scrollbar { display: none; }
 
 	.about-panel h2 {
 		font-family: 'Montserrat', sans-serif;
@@ -398,7 +376,15 @@
 		transition: opacity 0.4s ease;
 	}
 	.contact-panel.visible { opacity: 1; pointer-events: auto; }
-	.contact-panel.expanded { clip-path: none; }
+	.contact-panel { transition: opacity 0.4s ease, width 0.3s ease, height 0.3s ease; }
+	.contact-panel.expanded {
+		width: 25vw;
+		height: 25vw;
+		overflow-y: auto;
+		clip-path: none;
+		scrollbar-width: none;
+	}
+	.contact-panel.expanded::-webkit-scrollbar { display: none; }
 
 	.contact-panel h2 {
 		font-family: 'Montserrat', sans-serif;
@@ -710,14 +696,9 @@
 			scrollbar-width: none;
 		}
 		.about-panel::-webkit-scrollbar { display: none; }
-		.about-panel.expanded {
-			width: 80vw;
-			height: 80vw;
-			overflow-y: auto;
-		}
-		.contact-panel.expanded {
-			width: 80vw;
-			height: 80vw;
+		.about-panel.expanded, .contact-panel.expanded {
+			width: 90vw;
+			height: 90vw;
 			overflow-y: auto;
 		}
 		.about-panel h2 { font-size: 1.6rem; }
