@@ -72,13 +72,13 @@
 				</div>
 			</div>
 			<div class="col-header-full">Film Stills</div>
-			<img class="photo" src="/assets/STILL01.jpg" />
-			<img class="photo" src="/assets/STILL02.jpg" />
-			<img class="photo" src="/assets/STILL03.jpg" />
-			<img class="photo" src="/assets/STILL04.jpg" />
-			<img class="photo" src="/assets/STILL05.jpg" />
-			<img class="photo" src="/assets/STILL06.jpg" />
-			<img class="photo" src="/assets/STILL07.jpg" />
+			<img class="photo" src="/assets/STILL01.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL02.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL03.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL04.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL05.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL06.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
+			<img class="photo" src="/assets/STILL07.jpg" data-credits="Director: Laura Alvarez / Director of Photography: Geffen Shichor / Production Designer: Adriana Donca" />
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
@@ -137,7 +137,7 @@
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
 			<div class="col-header-full">Process</div>
-			<img class="photo" src="/assets/Chandelier.jpg" />
+			<img class="photo" src="/assets/Chandelier.jpg" data-credits="Concept Design: Adriana Donca / The Lobby — Chandelier" />
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
 			<div class="photo placeholder"></div>
@@ -180,6 +180,9 @@
 		<!-- Lightbox -->
 		<div class="lightbox" id="lightbox">
 			<img class="lightbox-img" id="lightbox-img" src="" />
+			<div class="lightbox-credits-bar" id="lightbox-credits-bar">
+				<span id="lightbox-credits-text"></span>
+			</div>
 		</div>
 
 		<!-- Project detail page -->
@@ -364,10 +367,12 @@
 			// Lightbox
 			const lightbox = document.getElementById('lightbox');
 			const lightboxImg = document.getElementById('lightbox-img');
+			const lightboxCredits = document.getElementById('lightbox-credits-text');
 
 			document.querySelectorAll('img.photo').forEach(function (img) {
 				img.addEventListener('click', function () {
 					lightboxImg.src = this.src;
+					lightboxCredits.textContent = this.dataset.credits || '';
 					lightbox.classList.add('open');
 				});
 			});
@@ -767,11 +772,34 @@
 	.lightbox.open { display: flex; }
 	.lightbox-img {
 		max-width: 100vw;
-		max-height: 100vh;
+		max-height: calc(100vh - 3rem);
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
 		pointer-events: none;
+	}
+
+	.lightbox-credits-bar {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 3rem;
+		background: rgba(0,0,0,0.85);
+		border-top: 1px solid rgba(255,255,255,0.1);
+		display: flex;
+		align-items: center;
+		padding: 0 2rem;
+		pointer-events: none;
+	}
+
+	.lightbox-credits-bar span {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.65rem;
+		font-weight: 300;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.6);
 	}
 
 	/* ── Project detail ── */
