@@ -139,8 +139,23 @@
 
 			document.querySelector('#about-panel .panel-expand').addEventListener('click', function () {
 				const panel = document.getElementById('about-panel');
-				panel.classList.toggle('expanded');
-				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
+				if (panel.classList.contains('expanded')) {
+					panel.classList.remove('expanded');
+					panel.style.width = '';
+					panel.style.height = '';
+					this.textContent = '⤢';
+				} else {
+					panel.classList.add('expanded');
+					panel.style.overflow = 'visible';
+					panel.style.height = 'auto';
+					panel.style.width = (panel.offsetWidth * 2.5) + 'px';
+					const h = panel.scrollHeight;
+					const size = Math.max(h, panel.offsetWidth);
+					panel.style.width = size + 'px';
+					panel.style.height = size + 'px';
+					panel.style.overflow = 'hidden';
+					this.textContent = '⤡';
+				}
 			});
 
 			document.getElementById('about-btn').addEventListener('click', function (e) {
@@ -181,8 +196,23 @@
 
 			document.querySelector('#contact-panel .panel-expand').addEventListener('click', function () {
 				const panel = document.getElementById('contact-panel');
-				panel.classList.toggle('expanded');
-				this.textContent = panel.classList.contains('expanded') ? '⤡' : '⤢';
+				if (panel.classList.contains('expanded')) {
+					panel.classList.remove('expanded');
+					panel.style.width = '';
+					panel.style.height = '';
+					this.textContent = '⤢';
+				} else {
+					panel.classList.add('expanded');
+					panel.style.overflow = 'visible';
+					panel.style.height = 'auto';
+					panel.style.width = (panel.offsetWidth * 2.5) + 'px';
+					const h = panel.scrollHeight;
+					const size = Math.max(h, panel.offsetWidth);
+					panel.style.width = size + 'px';
+					panel.style.height = size + 'px';
+					panel.style.overflow = 'hidden';
+					this.textContent = '⤡';
+				}
 			});
 
 			// Projects list
@@ -334,12 +364,7 @@
 		transition: opacity 0.4s ease;
 	}
 	.about-panel.visible { opacity: 1; pointer-events: auto; }
-	.about-panel.expanded {
-		width: 20vw;
-		height: 20vw;
-		overflow-y: auto;
-		clip-path: none;
-	}
+	.about-panel.expanded { clip-path: none; }
 
 	.about-panel h2 {
 		font-family: 'Montserrat', sans-serif;
@@ -373,12 +398,7 @@
 		transition: opacity 0.4s ease;
 	}
 	.contact-panel.visible { opacity: 1; pointer-events: auto; }
-	.contact-panel.expanded {
-		width: 20vw;
-		height: 20vw;
-		overflow-y: auto;
-		clip-path: none;
-	}
+	.contact-panel.expanded { clip-path: none; }
 
 	.contact-panel h2 {
 		font-family: 'Montserrat', sans-serif;
