@@ -55,6 +55,15 @@
 			</div>
 		</div>
 
+		<!-- Trespass intro overlay -->
+		<div class="trespass-intro" id="trespass-intro">
+			<div class="trespass-intro-content">
+				<h2 class="trespass-intro-title">Trespass</h2>
+				<p class="trespass-intro-desc">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
+				<p class="trespass-intro-sub">Short Film — Coming Soon, 2026</p>
+			</div>
+		</div>
+
 		<!-- Trespass grid -->
 		<button class="back-btn-grid" id="back-btn-grid">&#8592;</button>
 		<div class="trespass-grid" id="trespass-grid">
@@ -214,16 +223,22 @@
 				document.getElementById('menu').classList.add('visible');
 			});
 
-			// Trespass grid
+			// Trespass intro → grid
 			document.getElementById('trespass-btn').addEventListener('click', function () {
 				document.getElementById('projects-list').classList.remove('visible');
 				document.getElementById('back-btn-projects').classList.remove('visible');
-				document.getElementById('trespass-grid').classList.add('visible');
+				document.getElementById('trespass-intro').classList.add('visible');
 				document.getElementById('back-btn-grid').classList.add('visible');
+			});
+
+			document.getElementById('trespass-intro').addEventListener('click', function () {
+				document.getElementById('trespass-intro').classList.remove('visible');
+				document.getElementById('trespass-grid').classList.add('visible');
 			});
 
 			document.getElementById('back-btn-grid').addEventListener('click', function () {
 				document.getElementById('trespass-grid').classList.remove('visible');
+				document.getElementById('trespass-intro').classList.remove('visible');
 				document.getElementById('back-btn-grid').classList.remove('visible');
 				document.getElementById('projects-list').classList.add('visible');
 				document.getElementById('back-btn-projects').classList.add('visible');
@@ -546,6 +561,54 @@
 	@keyframes scroll-credits {
 		0%   { transform: translateX(0); }
 		100% { transform: translateX(-50%); }
+	}
+
+	/* ── Trespass intro ── */
+	.trespass-intro {
+		position: fixed;
+		inset: 0;
+		background: #000 url('/assets/PROJECTS_BACKGROUND_IMAGE.jpg') center/cover no-repeat;
+		z-index: 16;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+	.trespass-intro.visible { display: flex; }
+
+	.trespass-intro-content {
+		max-width: 42vw;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		text-align: left;
+	}
+
+	.trespass-intro-title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3.5rem;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	.trespass-intro-desc {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 300;
+		letter-spacing: 0.04em;
+		color: rgba(255,255,255,0.8);
+		line-height: 1.9;
+	}
+
+	.trespass-intro-sub {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.75rem;
+		font-weight: 400;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.5);
 	}
 
 	/* ── Trespass grid ── */
