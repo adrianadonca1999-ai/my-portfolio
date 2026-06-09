@@ -55,8 +55,8 @@
 			<div class="sketchbook-section">
 				<h3 class="sketchbook-section-title">Endoterra</h3>
 				<div class="sketchbook-grid">
-					<img class="photo sketchbook-photo sketchbook-photo--contain" src="/assets/1.jpg" data-credits="Endoterra — Section" />
-					<img class="photo sketchbook-photo sketchbook-photo--contain" src="/assets/2.jpg" data-credits="Endoterra — Plan" />
+					<img class="photo sketchbook-photo sketchbook-photo--contain" src="/assets/1.png" data-credits="Endoterra — Section" />
+					<img class="photo sketchbook-photo sketchbook-photo--contain" src="/assets/2.png" data-credits="Endoterra — Plan" />
 				</div>
 			</div>
 		</div>
@@ -242,6 +242,7 @@
 		<!-- Lightbox -->
 		<div class="lightbox" id="lightbox">
 			<img class="lightbox-img" id="lightbox-img" src="" />
+			<button class="lightbox-next" id="lightbox-next">&#8594;</button>
 			<div class="lightbox-credits-bar" id="lightbox-credits-bar">
 				<span id="lightbox-credits-text"></span>
 			</div>
@@ -444,13 +445,32 @@
 			const lightbox = document.getElementById('lightbox');
 			const lightboxImg = document.getElementById('lightbox-img');
 			const lightboxCredits = document.getElementById('lightbox-credits-text');
+			const lightboxNext = document.getElementById('lightbox-next');
+
+			let lightboxGallery = [];
+			let lightboxIndex = 0;
+
+			function showLightboxImage() {
+				const img = lightboxGallery[lightboxIndex];
+				lightboxImg.src = img.src;
+				lightboxCredits.textContent = img.dataset.credits || '';
+				lightboxNext.style.display = lightboxGallery.length > 1 ? 'flex' : 'none';
+			}
 
 			document.querySelectorAll('img.photo').forEach(function (img) {
 				img.addEventListener('click', function () {
-					lightboxImg.src = this.src;
-					lightboxCredits.textContent = this.dataset.credits || '';
+					const gallery = this.closest('.sketchbook-grid, .trespass-grid');
+					lightboxGallery = gallery ? Array.from(gallery.querySelectorAll('img.photo')) : [this];
+					lightboxIndex = lightboxGallery.indexOf(this);
+					showLightboxImage();
 					lightbox.classList.add('open');
 				});
+			});
+
+			lightboxNext.addEventListener('click', function (e) {
+				e.stopPropagation();
+				lightboxIndex = (lightboxIndex + 1) % lightboxGallery.length;
+				showLightboxImage();
 			});
 
 			lightbox.addEventListener('click', function () {
@@ -1051,6 +1071,27 @@
 		pointer-events: none;
 	}
 
+	.lightbox-next {
+		position: absolute;
+		top: 50%;
+		right: 1.5rem;
+		transform: translateY(-50%);
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 700;
+		color: #fff;
+		background: none;
+		border: none;
+		-webkit-text-stroke: 0.5px #fff;
+		cursor: pointer;
+		z-index: 210;
+		line-height: 1;
+		transition: opacity 0.2s ease;
+	}
+	.lightbox-next:hover {
+		opacity: 0.5;
+	}
+
 	.lightbox-credits-bar {
 		position: absolute;
 		bottom: 0;
@@ -1286,5 +1327,8 @@
 		/* ── Lightbox ── */
 		.lightbox-credits-bar { padding: 0 1rem; }
 		.lightbox-credits-bar span { font-size: 0.55rem; }
+		.lightbox-next {
+			right: 0.75rem;
+		}
 	}
 </style>
