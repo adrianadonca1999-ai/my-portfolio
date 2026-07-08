@@ -17,6 +17,7 @@
 		<button class="back-btn" id="back-btn-dance">&#8592;</button>
 		<button class="back-btn" id="back-btn-macbeth">&#8592;</button>
 		<button class="back-btn" id="back-btn-house">&#8592;</button>
+		<button class="back-btn" id="back-btn-interior">&#8592;</button>
 		<!-- About panel -->
 		<div class="about-panel" id="about-panel">
 			<header class="site-header">
@@ -502,6 +503,44 @@
 
 		</div>
 
+		<!-- Interior Design grid -->
+		<div class="trespass-grid" id="interior-grid">
+
+			<div class="proj-intro">
+				<div class="proj-intro-left">
+					<h2 class="proj-title">Interior Design</h2>
+					<p class="proj-meta">Design and Drafting</p>
+				</div>
+				<div class="proj-intro-right">
+					<div class="trespass-header-credits">
+						<p><span>Designer</span>Adriana Donca</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="proj-rule" />
+
+			<div class="proj-section">
+				<p class="proj-section-label">Drafting</p>
+				<div class="carousel-wrap">
+					<div class="carousel-viewport">
+						<div class="carousel-track" id="interior-drafting-track">
+							<img src="/assets/INTERIOR_DESIGN_1.jpg" data-credits="Drafting: Adriana Donca / Interior Design" />
+							<img src="/assets/INTERIOR_DESIGN_2.jpg" data-credits="Drafting: Adriana Donca / Interior Design" />
+							<img src="/assets/INTERIOR_DESIGN_3.jpg" data-credits="Drafting: Adriana Donca / Interior Design" />
+							<img src="/assets/INTERIOR_DESIGN_4.jpg" data-credits="Drafting: Adriana Donca / Interior Design" />
+						</div>
+					</div>
+					<div class="carousel-controls">
+						<button class="car-btn car-prev">&#8592;</button>
+						<span class="car-counter" id="interior-drafting-counter">1 / 4</span>
+						<button class="car-btn car-next">&#8594;</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 		<!-- Lightbox -->
 		<div class="lightbox" id="lightbox">
 			<img class="lightbox-img" id="lightbox-img" src="" />
@@ -573,13 +612,13 @@
 						</span>
 						<span class="hp-proj-year">2026</span>
 					</div>
-					<div class="hp-proj-item hp-proj-inactive">
+					<div class="hp-proj-item" id="hp-interior">
 						<span class="hp-proj-num">05</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">Interior Design</span>
 							<span class="hp-proj-sub">Design and Drafting</span>
 						</span>
-						<span class="hp-proj-year">Coming Soon</span>
+						<span class="hp-proj-year">2024</span>
 					</div>
 				</div>
 			</div>
@@ -682,6 +721,12 @@
 				document.getElementById('back-btn-house').classList.remove('visible');
 			});
 
+			// Interior Design back → homepage
+			document.getElementById('back-btn-interior').addEventListener('click', function() {
+				document.getElementById('interior-grid').classList.remove('visible');
+				document.getElementById('back-btn-interior').classList.remove('visible');
+			});
+
 			// Homepage cards (direct to project grids)
 			document.getElementById('hp-trespass').addEventListener('click', function() {
 				document.getElementById('trespass-grid').classList.add('visible');
@@ -698,6 +743,10 @@
 			document.getElementById('hp-house').addEventListener('click', function() {
 				document.getElementById('house-grid').classList.add('visible');
 				document.getElementById('back-btn-house').classList.add('visible');
+			});
+			document.getElementById('hp-interior').addEventListener('click', function() {
+				document.getElementById('interior-grid').classList.add('visible');
+				document.getElementById('back-btn-interior').classList.add('visible');
 			});
 
 			// Lightbox
@@ -756,6 +805,7 @@
 			initCarousel('macbeth-process-track', 'macbeth-process-counter');
 			initCarousel('house-stills-track', 'house-stills-counter');
 			initCarousel('house-process-track', 'house-process-counter');
+			initCarousel('interior-drafting-track', 'interior-drafting-counter');
 
 			// Homepage carousel
 			(function() {
