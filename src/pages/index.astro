@@ -15,6 +15,7 @@
 		<button class="back-btn" id="back-btn-contact">&#8592;</button>
 		<button class="back-btn" id="back-btn-grid">&#8592;</button>
 		<button class="back-btn" id="back-btn-dance">&#8592;</button>
+		<button class="back-btn" id="back-btn-macbeth">&#8592;</button>
 		<!-- About panel -->
 		<div class="about-panel" id="about-panel">
 			<header class="site-header">
@@ -375,6 +376,49 @@
 
 		</div>
 
+		<!-- Lady Macbeth grid -->
+		<div class="trespass-grid" id="macbeth-grid">
+
+			<div class="proj-intro">
+				<div class="proj-intro-left">
+					<h2 class="proj-title">Lady Macbeth</h2>
+					<p class="proj-meta">Short Film &nbsp;·&nbsp; 2026</p>
+				</div>
+				<div class="proj-intro-right">
+					<div class="trespass-header-credits">
+						<p><span>Director</span>Laura Alvarez</p>
+						<p><span>Director of Photography</span>Geffen Shichor</p>
+						<p><span>Production Designer</span>Adriana Donca</p>
+						<p><span>Art Director</span>Jack Freedman</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="proj-rule" />
+
+			<div class="proj-section">
+				<p class="proj-section-label">Stills</p>
+				<div class="carousel-wrap">
+					<div class="carousel-viewport">
+						<div class="carousel-track" id="macbeth-stills-track">
+							<img src="/assets/MACBETH6.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+							<img src="/assets/MACBETH1.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+							<img src="/assets/MACBETH2.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+							<img src="/assets/MACBETH3.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+							<img src="/assets/MACBETH4.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+							<img src="/assets/MACBETH5.PNG" data-credits="Film Still / Lady Macbeth (2026)" />
+						</div>
+					</div>
+					<div class="carousel-controls">
+						<button class="car-btn car-prev">&#8592;</button>
+						<span class="car-counter" id="macbeth-stills-counter">1 / 6</span>
+						<button class="car-btn car-next">&#8594;</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 		<!-- Lightbox -->
 		<div class="lightbox" id="lightbox">
 			<img class="lightbox-img" id="lightbox-img" src="" />
@@ -430,13 +474,13 @@
 						</span>
 						<span class="hp-proj-year">Coming Soon</span>
 					</div>
-					<div class="hp-proj-item hp-proj-inactive">
+					<div class="hp-proj-item" id="hp-macbeth">
 						<span class="hp-proj-num">03</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">Lady Macbeth</span>
 							<span class="hp-proj-sub">Short Film</span>
 						</span>
-						<span class="hp-proj-year">Coming Soon</span>
+						<span class="hp-proj-year">2026</span>
 					</div>
 					<div class="hp-proj-item hp-proj-inactive">
 						<span class="hp-proj-num">04</span>
@@ -535,6 +579,12 @@
 				document.getElementById('back-btn-dance').classList.remove('visible');
 			});
 
+			// Macbeth back → homepage
+			document.getElementById('back-btn-macbeth').addEventListener('click', function() {
+				document.getElementById('macbeth-grid').classList.remove('visible');
+				document.getElementById('back-btn-macbeth').classList.remove('visible');
+			});
+
 			// Homepage cards (direct to project grids)
 			document.getElementById('hp-trespass').addEventListener('click', function() {
 				document.getElementById('trespass-grid').classList.add('visible');
@@ -543,6 +593,10 @@
 			document.getElementById('hp-dance').addEventListener('click', function() {
 				document.getElementById('dance-grid').classList.add('visible');
 				document.getElementById('back-btn-dance').classList.add('visible');
+			});
+			document.getElementById('hp-macbeth').addEventListener('click', function() {
+				document.getElementById('macbeth-grid').classList.add('visible');
+				document.getElementById('back-btn-macbeth').classList.add('visible');
 			});
 
 			// Lightbox
@@ -597,6 +651,7 @@
 			initCarousel('process-track', 'process-counter');
 			initCarousel('dance-process-track', 'dance-process-counter');
 			initCarousel('dance-ue-track', 'dance-ue-counter');
+			initCarousel('macbeth-stills-track', 'macbeth-stills-counter');
 
 			// Homepage carousel
 			(function() {
