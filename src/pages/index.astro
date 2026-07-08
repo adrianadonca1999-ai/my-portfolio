@@ -16,6 +16,7 @@
 		<button class="back-btn" id="back-btn-grid">&#8592;</button>
 		<button class="back-btn" id="back-btn-dance">&#8592;</button>
 		<button class="back-btn" id="back-btn-macbeth">&#8592;</button>
+		<button class="back-btn" id="back-btn-house">&#8592;</button>
 		<!-- About panel -->
 		<div class="about-panel" id="about-panel">
 			<header class="site-header">
@@ -440,6 +441,49 @@
 
 		</div>
 
+		<!-- House grid -->
+		<div class="trespass-grid" id="house-grid">
+
+			<div class="proj-intro">
+				<div class="proj-intro-left">
+					<h2 class="proj-title">House</h2>
+					<p class="proj-meta">Short Film &nbsp;·&nbsp; 2026</p>
+				</div>
+				<div class="proj-intro-right">
+					<div class="trespass-header-credits">
+						<p><span>Director</span>Luis Garcia</p>
+						<p><span>Director of Photography</span>Geffen Shichor</p>
+						<p><span>Production Designer</span>Adriana Donca</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="proj-rule" />
+
+			<div class="proj-section">
+				<p class="proj-section-label">Stills</p>
+				<div class="carousel-wrap">
+					<div class="carousel-viewport">
+						<div class="carousel-track" id="house-stills-track">
+							<img src="/assets/HOUSE_STILL6.JPG" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_references_1940.png" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_STILL1.JPG" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_STILL2.JPG" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_STILL3.JPG" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_STILL4.JPG" data-credits="Film Still / House (2026)" />
+							<img src="/assets/HOUSE_STILL5.JPG" data-credits="Film Still / House (2026)" />
+						</div>
+					</div>
+					<div class="carousel-controls">
+						<button class="car-btn car-prev">&#8592;</button>
+						<span class="car-counter" id="house-stills-counter">1 / 7</span>
+						<button class="car-btn car-next">&#8594;</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 		<!-- Lightbox -->
 		<div class="lightbox" id="lightbox">
 			<img class="lightbox-img" id="lightbox-img" src="" />
@@ -503,13 +547,13 @@
 						</span>
 						<span class="hp-proj-year">2026</span>
 					</div>
-					<div class="hp-proj-item hp-proj-inactive">
+					<div class="hp-proj-item" id="hp-house">
 						<span class="hp-proj-num">04</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">House</span>
 							<span class="hp-proj-sub">Short Film</span>
 						</span>
-						<span class="hp-proj-year">Coming Soon</span>
+						<span class="hp-proj-year">2026</span>
 					</div>
 				</div>
 			</div>
@@ -606,6 +650,12 @@
 				document.getElementById('back-btn-macbeth').classList.remove('visible');
 			});
 
+			// House back → homepage
+			document.getElementById('back-btn-house').addEventListener('click', function() {
+				document.getElementById('house-grid').classList.remove('visible');
+				document.getElementById('back-btn-house').classList.remove('visible');
+			});
+
 			// Homepage cards (direct to project grids)
 			document.getElementById('hp-trespass').addEventListener('click', function() {
 				document.getElementById('trespass-grid').classList.add('visible');
@@ -618,6 +668,10 @@
 			document.getElementById('hp-macbeth').addEventListener('click', function() {
 				document.getElementById('macbeth-grid').classList.add('visible');
 				document.getElementById('back-btn-macbeth').classList.add('visible');
+			});
+			document.getElementById('hp-house').addEventListener('click', function() {
+				document.getElementById('house-grid').classList.add('visible');
+				document.getElementById('back-btn-house').classList.add('visible');
 			});
 
 			// Lightbox
@@ -674,6 +728,7 @@
 			initCarousel('dance-ue-track', 'dance-ue-counter');
 			initCarousel('macbeth-stills-track', 'macbeth-stills-counter');
 			initCarousel('macbeth-process-track', 'macbeth-process-counter');
+			initCarousel('house-stills-track', 'house-stills-counter');
 
 			// Homepage carousel
 			(function() {
