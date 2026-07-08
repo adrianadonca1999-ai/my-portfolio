@@ -13,7 +13,6 @@
 		<!-- Back buttons -->
 		<button class="back-btn" id="back-btn">&#8592;</button>
 		<button class="back-btn" id="back-btn-contact">&#8592;</button>
-		<button class="back-btn" id="back-btn-projects">&#8592;</button>
 		<button class="back-btn" id="back-btn-grid">&#8592;</button>
 		<button class="back-btn" id="back-btn-dance">&#8592;</button>
 		<!-- About panel -->
@@ -24,7 +23,6 @@
 				<hr class="site-divider" />
 				<nav class="site-nav">
 					<a href="#" id="about-btn-inner">About</a>
-					<a href="#" id="projects-btn-inner">Projects</a>
 					<a href="#" id="contact-btn-inner">Contact</a>
 				</nav>
 			</header>
@@ -46,7 +44,7 @@
 							<div class="skills-cols">
 								<div class="skills-col">
 									<p class="skills-col-title">Design Software</p>
-									<p class="skills-body">Adobe Suite (After Effects, Audition, Bridge, Illustrator, InDesign, Lightroom, Photoshop, Premiere, Substance Painter), AutoCAD, Blender, Cinema 4D, Gemini AI, Google Suite, Grasshopper, Maya, Microsoft Teams, Midjourney AI, Miro, Rhino, SketchUp, Unreal Engine, V-Ray, Zbrush, Zoom</p>
+									<p class="skills-body">Adobe Suite (After Effects, Audition, Bridge, Illustrator, InDesign, Lightroom, Photoshop, Premiere, Substance Painter), AutoCAD, Blender, Cinema 4D, Gemini AI, Google Suite, Grasshopper, <strong class="skills-highlight">Maya</strong>, Microsoft Teams, Midjourney AI, Miro, <strong class="skills-highlight">Rhino</strong>, SketchUp, <strong class="skills-highlight">Unreal Engine</strong>, V-Ray, Zbrush, Zoom</p>
 								</div>
 								<div class="skills-col">
 									<p class="skills-col-title">Theater &amp; Set Design</p>
@@ -162,7 +160,6 @@
 				<hr class="site-divider" />
 				<nav class="site-nav">
 					<a href="#" id="contact-about-btn">About</a>
-					<a href="#" id="contact-projects-btn">Projects</a>
 					<a href="#" id="contact-contact-btn">Contact</a>
 				</nav>
 			</header>
@@ -191,40 +188,6 @@
 					</form>
 				</div>
 			</div>
-		</div>
-
-		<!-- Projects list -->
-		<div class="projects-list" id="projects-list">
-			<header class="site-header">
-				<h1 class="site-name">Adriana Donca</h1>
-				<p class="site-subtitle">Production Designer</p>
-				<hr class="site-divider" />
-				<nav class="site-nav">
-					<a href="#" id="projects-about-btn">About</a>
-					<a href="#" id="projects-projects-btn">Projects</a>
-					<a href="#" id="projects-contact-btn">Contact</a>
-				</nav>
-			</header>
-			<main class="project-grid">
-				<div class="project-card" id="trespass-btn">
-					<div class="project-thumb">
-						<img src="/assets/18.jpg" alt="Trespass" />
-						<span class="project-thumb-label">Trespass</span>
-					</div>
-				</div>
-				<div class="project-card" id="dance-btn">
-					<div class="project-thumb">
-						<img src="/assets/Palace.jpg" alt="The Dance of the Seven Veils" />
-						<span class="project-thumb-label">The Dance of the Seven Veils</span>
-					</div>
-				</div>
-				<div class="project-card">
-					<div class="project-thumb"></div>
-				</div>
-				<div class="project-card">
-					<div class="project-thumb"></div>
-				</div>
-			</main>
 		</div>
 
 		<!-- Trespass grid -->
@@ -362,7 +325,7 @@
 			<hr class="proj-rule" />
 
 			<div class="proj-section">
-				<p class="proj-section-label">Process</p>
+				<p class="proj-section-label">Concept Art</p>
 				<div class="carousel-wrap">
 					<div class="carousel-viewport">
 						<div class="carousel-track" id="dance-process-track">
@@ -375,6 +338,24 @@
 					<div class="carousel-controls">
 						<button class="car-btn car-prev">&#8592;</button>
 						<span class="car-counter" id="dance-process-counter">1 / 4</span>
+						<button class="car-btn car-next">&#8594;</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="proj-section">
+				<p class="proj-section-label">Process</p>
+				<div class="carousel-wrap">
+					<div class="carousel-viewport">
+						<div class="carousel-track" id="dance-ue-track">
+							<img src="/assets/Palace_view_render.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
+							<img src="/assets/dance_render_02.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
+							<img src="/assets/HighresScreenshot00010.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
+						</div>
+					</div>
+					<div class="carousel-controls">
+						<button class="car-btn car-prev">&#8592;</button>
+						<span class="car-counter" id="dance-ue-counter">1 / 3</span>
 						<button class="car-btn car-next">&#8594;</button>
 					</div>
 				</div>
@@ -393,37 +374,68 @@
 
 		<!-- Homepage -->
 		<div class="site-wrapper">
-			<header class="site-header">
-				<h1 class="site-name">Adriana Donca</h1>
-				<p class="site-subtitle">Production Designer</p>
-				<hr class="site-divider" />
-				<nav class="site-nav">
-					<a href="#" id="about-btn">About</a>
-					<a href="#" id="projects-btn">Projects</a>
-					<a href="#" id="contact-btn">Contact</a>
-				</nav>
-			</header>
+			<!-- Left: fullscreen image carousel -->
+			<div class="hp-carousel">
+				<img class="hp-carousel-img active" src="/assets/06.jpg" alt="" />
+				<img class="hp-carousel-img" src="/assets/09.jpg" alt="" />
+				<img class="hp-carousel-img" src="/assets/18.jpg" alt="" />
+				<button class="hp-car-btn hp-car-prev" id="hp-prev">&#8592;</button>
+				<button class="hp-car-btn hp-car-next" id="hp-next">&#8594;</button>
+				<div class="hp-car-dots">
+					<button class="hp-dot active" data-idx="0"></button>
+					<button class="hp-dot" data-idx="1"></button>
+					<button class="hp-dot" data-idx="2"></button>
+				</div>
+			</div>
 
-			<main class="project-grid">
-				<div class="project-card" id="hp-trespass">
-					<div class="project-thumb">
-						<img src="/assets/18.jpg" alt="Trespass" />
-						<span class="project-thumb-label">Trespass</span>
+			<!-- Right: header + project list -->
+			<div class="hp-right">
+				<header class="site-header">
+					<h1 class="site-name">Adriana Donca</h1>
+					<p class="site-subtitle">Production Designer</p>
+					<hr class="site-divider" />
+					<nav class="site-nav">
+						<a href="#" id="about-btn">About</a>
+						<a href="#" id="contact-btn">Contact</a>
+					</nav>
+				</header>
+
+				<div class="hp-project-list">
+					<p class="hp-list-label">Projects</p>
+					<div class="hp-proj-item" id="hp-trespass">
+						<span class="hp-proj-num">01</span>
+						<span class="hp-proj-title-wrap">
+							<span class="hp-proj-title">Trespass</span>
+							<span class="hp-proj-sub">Short Film</span>
+						</span>
+						<span class="hp-proj-year">2026</span>
+					</div>
+					<div class="hp-proj-item" id="hp-dance">
+						<span class="hp-proj-num">02</span>
+						<span class="hp-proj-title-wrap">
+							<span class="hp-proj-title">The Dance of the Seven Veils</span>
+							<span class="hp-proj-sub">Short Film</span>
+						</span>
+						<span class="hp-proj-year">Coming Soon</span>
+					</div>
+					<div class="hp-proj-item hp-proj-inactive">
+						<span class="hp-proj-num">03</span>
+						<span class="hp-proj-title-wrap">
+							<span class="hp-proj-title">Lady Macbeth</span>
+							<span class="hp-proj-sub">Short Film</span>
+						</span>
+						<span class="hp-proj-year">Coming Soon</span>
+					</div>
+					<div class="hp-proj-item hp-proj-inactive">
+						<span class="hp-proj-num">04</span>
+						<span class="hp-proj-title-wrap">
+							<span class="hp-proj-title">House</span>
+							<span class="hp-proj-sub">Short Film</span>
+						</span>
+						<span class="hp-proj-year">Coming Soon</span>
 					</div>
 				</div>
-				<div class="project-card" id="hp-dance">
-					<div class="project-thumb">
-						<img src="/assets/Palace.jpg" alt="The Dance of the Seven Veils" />
-						<span class="project-thumb-label">The Dance of the Seven Veils</span>
-					</div>
-				</div>
-				<div class="project-card">
-					<div class="project-thumb"></div>
-				</div>
-				<div class="project-card">
-					<div class="project-thumb"></div>
-				</div>
-			</main>
+			</div>
 		</div>
 
 		<p class="clock" id="clock"></p>
@@ -457,12 +469,6 @@
 			});
 			document.getElementById('back-btn').addEventListener('click', closeAbout);
 			document.getElementById('about-btn-inner').addEventListener('click', function(e) { e.preventDefault(); });
-			document.getElementById('projects-btn-inner').addEventListener('click', function(e) {
-				e.preventDefault();
-				closeAbout();
-				document.getElementById('projects-list').classList.add('visible');
-				document.getElementById('back-btn-projects').classList.add('visible');
-			});
 			document.getElementById('contact-btn-inner').addEventListener('click', function(e) {
 				e.preventDefault();
 				closeAbout();
@@ -488,12 +494,6 @@
 				document.getElementById('about-panel').classList.add('visible');
 				document.getElementById('back-btn').classList.add('visible');
 			});
-			document.getElementById('contact-projects-btn').addEventListener('click', function(e) {
-				e.preventDefault();
-				closeContact();
-				document.getElementById('projects-list').classList.add('visible');
-				document.getElementById('back-btn-projects').classList.add('visible');
-			});
 			document.getElementById('contact-contact-btn').addEventListener('click', function(e) { e.preventDefault(); });
 
 			// Contact form
@@ -511,57 +511,16 @@
 				}
 			});
 
-			// Projects list
-			function closeProjects() {
-				document.getElementById('projects-list').classList.remove('visible');
-				document.getElementById('back-btn-projects').classList.remove('visible');
-			}
-			document.getElementById('projects-btn').addEventListener('click', function(e) {
-				e.preventDefault();
-				document.getElementById('projects-list').classList.add('visible');
-				document.getElementById('back-btn-projects').classList.add('visible');
-			});
-			document.getElementById('back-btn-projects').addEventListener('click', closeProjects);
-			document.getElementById('projects-about-btn').addEventListener('click', function(e) {
-				e.preventDefault();
-				closeProjects();
-				document.getElementById('about-panel').classList.add('visible');
-				document.getElementById('back-btn').classList.add('visible');
-			});
-			document.getElementById('projects-projects-btn').addEventListener('click', function(e) { e.preventDefault(); });
-			document.getElementById('projects-contact-btn').addEventListener('click', function(e) {
-				e.preventDefault();
-				closeProjects();
-				document.getElementById('contact-panel').classList.add('visible');
-				document.getElementById('back-btn-contact').classList.add('visible');
-			});
-
-			// Trespass (from projects list)
-			document.getElementById('trespass-btn').addEventListener('click', function() {
-				document.getElementById('projects-list').classList.remove('visible');
-				document.getElementById('back-btn-projects').classList.remove('visible');
-				document.getElementById('trespass-grid').classList.add('visible');
-				document.getElementById('back-btn-grid').classList.add('visible');
-			});
+			// Trespass back → homepage
 			document.getElementById('back-btn-grid').addEventListener('click', function() {
 				document.getElementById('trespass-grid').classList.remove('visible');
 				document.getElementById('back-btn-grid').classList.remove('visible');
-				document.getElementById('projects-list').classList.add('visible');
-				document.getElementById('back-btn-projects').classList.add('visible');
 			});
 
-			// Dance (from projects list)
-			document.getElementById('dance-btn').addEventListener('click', function() {
-				document.getElementById('projects-list').classList.remove('visible');
-				document.getElementById('back-btn-projects').classList.remove('visible');
-				document.getElementById('dance-grid').classList.add('visible');
-				document.getElementById('back-btn-dance').classList.add('visible');
-			});
+			// Dance back → homepage
 			document.getElementById('back-btn-dance').addEventListener('click', function() {
 				document.getElementById('dance-grid').classList.remove('visible');
 				document.getElementById('back-btn-dance').classList.remove('visible');
-				document.getElementById('projects-list').classList.add('visible');
-				document.getElementById('back-btn-projects').classList.add('visible');
 			});
 
 			// Homepage cards (direct to project grids)
@@ -625,6 +584,42 @@
 			initCarousel('setphoto-track', 'setphoto-counter');
 			initCarousel('process-track', 'process-counter');
 			initCarousel('dance-process-track', 'dance-process-counter');
+			initCarousel('dance-ue-track', 'dance-ue-counter');
+
+			// Homepage carousel
+			(function() {
+				var hpImgs = document.querySelectorAll('.hp-carousel-img');
+				var hpDots = document.querySelectorAll('.hp-dot');
+				var hpCur = 0;
+				var hpTimer;
+
+				function hpGoTo(idx) {
+					hpImgs[hpCur].classList.remove('active');
+					hpDots[hpCur].classList.remove('active');
+					hpCur = (idx + hpImgs.length) % hpImgs.length;
+					hpImgs[hpCur].classList.add('active');
+					hpDots[hpCur].classList.add('active');
+				}
+
+				function hpResetTimer() {
+					clearInterval(hpTimer);
+					hpTimer = setInterval(function() { hpGoTo(hpCur + 1); }, 4500);
+				}
+
+				document.getElementById('hp-prev').addEventListener('click', function(e) {
+					e.stopPropagation(); hpGoTo(hpCur - 1); hpResetTimer();
+				});
+				document.getElementById('hp-next').addEventListener('click', function(e) {
+					e.stopPropagation(); hpGoTo(hpCur + 1); hpResetTimer();
+				});
+				hpDots.forEach(function(dot) {
+					dot.addEventListener('click', function(e) {
+						e.stopPropagation(); hpGoTo(Number(dot.dataset.idx)); hpResetTimer();
+					});
+				});
+
+				hpTimer = setInterval(function() { hpGoTo(hpCur + 1); }, 4500);
+			})();
 		</script>
 	</body>
 </html>
@@ -678,11 +673,167 @@
 	.back-btn.visible { opacity: 1; pointer-events: auto; }
 	.back-btn:hover { opacity: 0.5; }
 
-	/* ── Homepage ── */
+	/* ── Homepage split layout ── */
 	.site-wrapper {
 		width: 100%;
-		min-height: 100vh;
-		padding-bottom: 6rem;
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		overflow: hidden;
+	}
+
+	.hp-carousel {
+		position: relative;
+		flex: 0 0 58%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.hp-carousel-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 0.7s ease;
+	}
+	.hp-carousel-img.active { opacity: 1; }
+
+	.hp-car-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.3);
+		color: #fff;
+		border: none;
+		padding: 0.75rem 1rem;
+		font-size: 1.1rem;
+		font-family: 'Montserrat', sans-serif;
+		cursor: pointer;
+		z-index: 5;
+		transition: background 0.2s;
+	}
+	.hp-car-btn:hover { background: rgba(0, 0, 0, 0.6); }
+	.hp-car-prev { left: 1rem; }
+	.hp-car-next { right: 1rem; }
+
+	.hp-car-dots {
+		position: absolute;
+		bottom: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.5rem;
+		z-index: 5;
+	}
+	.hp-dot {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		border: none;
+		background: rgba(255, 255, 255, 0.4);
+		cursor: pointer;
+		padding: 0;
+		transition: background 0.2s;
+	}
+	.hp-dot.active { background: #fff; }
+
+	.hp-right {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+		scrollbar-width: none;
+		background: #fff;
+	}
+	.hp-right::-webkit-scrollbar { display: none; }
+
+	.hp-right .site-header {
+		text-align: center;
+		padding: 3rem 6vw 0;
+		flex-shrink: 0;
+	}
+
+	.hp-project-list {
+		padding: 2.5rem 2.5rem 4rem;
+		flex: 1;
+	}
+
+	.hp-list-label {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.6rem;
+		font-weight: 700;
+		letter-spacing: 0.25em;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.35);
+		margin-bottom: 1.25rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.hp-proj-item {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		cursor: pointer;
+		transition: opacity 0.2s;
+	}
+	.hp-proj-item:hover { opacity: 0.45; }
+
+	.hp-proj-num {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.6rem;
+		font-weight: 400;
+		letter-spacing: 0.1em;
+		color: rgba(0, 0, 0, 0.35);
+		flex-shrink: 0;
+		width: 1.8rem;
+	}
+
+	.hp-proj-title-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		flex: 1;
+	}
+
+	.hp-proj-title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.78rem;
+		font-weight: 400;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #000;
+	}
+
+	.hp-proj-sub {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.58rem;
+		font-weight: 300;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.4);
+	}
+
+	.hp-proj-inactive {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.hp-proj-inactive .hp-proj-title {
+		color: rgba(0, 0, 0, 0.35);
+	}
+
+	.hp-proj-year {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 0.62rem;
+		font-weight: 300;
+		letter-spacing: 0.1em;
+		color: rgba(0, 0, 0, 0.35);
+		flex-shrink: 0;
 	}
 
 	.site-header {
@@ -887,6 +1038,13 @@
 		font-weight: 300;
 		line-height: 1.75;
 		color: rgba(0, 0, 0, 0.7);
+	}
+
+	.skills-highlight {
+		font-weight: 600;
+		font-size: 0.75rem;
+		color: #000;
+		letter-spacing: 0.03em;
 	}
 
 	/* Work */
@@ -1568,6 +1726,19 @@
 	@media (max-width: 768px) {
 		html, body { cursor: auto; }
 		#custom-cursor { display: none; }
+
+		.site-wrapper {
+			flex-direction: column;
+			height: auto;
+			min-height: 100vh;
+		}
+		.hp-carousel {
+			flex: none;
+			width: 100%;
+			height: 55vw;
+			min-height: 220px;
+		}
+		.hp-right { flex: none; }
 
 		.site-name { font-size: 1.4rem; letter-spacing: 0.12em; }
 		.site-nav { gap: 1.5rem; flex-wrap: wrap; }
