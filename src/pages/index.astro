@@ -16,6 +16,7 @@
 		<button class="back-btn" id="back-btn-grid">&#8592;</button>
 		<button class="back-btn" id="back-btn-dance">&#8592;</button>
 		<button class="back-btn" id="back-btn-served">&#8592;</button>
+		<button class="back-btn" id="back-btn-appetite">&#8592;</button>
 		<button class="back-btn" id="back-btn-macbeth">&#8592;</button>
 		<button class="back-btn" id="back-btn-house">&#8592;</button>
 		<button class="back-btn" id="back-btn-interior">&#8592;</button>
@@ -413,6 +414,27 @@
 
 		</div>
 
+		<!-- APPETITE grid -->
+		<div class="trespass-grid" id="appetite-grid">
+
+			<div class="proj-intro">
+				<div class="proj-intro-left">
+					<h2 class="proj-title">Appetite</h2>
+					<p class="proj-meta">Spec Commercial &nbsp;·&nbsp; August 2026</p>
+				</div>
+				<div class="proj-intro-right">
+					<div class="trespass-header-credits">
+						<p><span>Production Designer</span>Adriana Donca</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="proj-rule" />
+
+			<p class="proj-synopsis">The film explores noise cancellation as both a sonic and visual experience. Inside a chaotic office, one character remains calm, protected by his earphones. Through one continuous pull-out shot, an intimate composition gradually reveals the disorder surrounding him. Lighting becomes a visual expression of noise cancellation: a warm, dramatic glow creates his private world, while removing the earphones returns him to the flat fluorescent reality of the office. The visual language draws from Caravaggio's tenebrism, Georges de La Tour's candlelit intimacy, and Gregory Crewdson's staged photography, contrasting the chaos of everyday life with a temporary, personal space of calm.</p>
+
+		</div>
+
 		<!-- Lady Macbeth grid -->
 		<div class="trespass-grid" id="macbeth-grid">
 
@@ -678,8 +700,16 @@
 						</span>
 						<span class="hp-proj-year">July 2026</span>
 					</div>
-					<div class="hp-proj-item" id="hp-macbeth">
+					<div class="hp-proj-item" id="hp-appetite">
 						<span class="hp-proj-num">04</span>
+						<span class="hp-proj-title-wrap">
+							<span class="hp-proj-title">Appetite</span>
+							<span class="hp-proj-sub">Spec Commercial</span>
+						</span>
+						<span class="hp-proj-year">Aug 2026</span>
+					</div>
+					<div class="hp-proj-item" id="hp-macbeth">
+						<span class="hp-proj-num">05</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">Lady Macbeth</span>
 							<span class="hp-proj-sub">Short Film</span>
@@ -687,7 +717,7 @@
 						<span class="hp-proj-year">April 2026</span>
 					</div>
 					<div class="hp-proj-item" id="hp-house">
-						<span class="hp-proj-num">05</span>
+						<span class="hp-proj-num">06</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">House</span>
 							<span class="hp-proj-sub">Short Film</span>
@@ -695,7 +725,7 @@
 						<span class="hp-proj-year">March 2026</span>
 					</div>
 					<div class="hp-proj-item" id="hp-spermania">
-						<span class="hp-proj-num">06</span>
+						<span class="hp-proj-num">07</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">Spermania</span>
 							<span class="hp-proj-sub">Spec Commercial for Durex</span>
@@ -703,7 +733,7 @@
 						<span class="hp-proj-year">May 2026</span>
 					</div>
 					<div class="hp-proj-item" id="hp-interior">
-						<span class="hp-proj-num">07</span>
+						<span class="hp-proj-num">08</span>
 						<span class="hp-proj-title-wrap">
 							<span class="hp-proj-title">Interior Design</span>
 							<span class="hp-proj-sub">Design and Drafting</span>
@@ -739,6 +769,7 @@
 				trespass: ['trespass-grid', 'back-btn-grid'],
 				dance: ['dance-grid', 'back-btn-dance'],
 				served: ['served-grid', 'back-btn-served'],
+				appetite: ['appetite-grid', 'back-btn-appetite'],
 				macbeth: ['macbeth-grid', 'back-btn-macbeth'],
 				house: ['house-grid', 'back-btn-house'],
 				interior: ['interior-grid', 'back-btn-interior'],
@@ -819,6 +850,7 @@
 			document.getElementById('back-btn-grid').addEventListener('click', function() { history.back(); });
 			document.getElementById('back-btn-dance').addEventListener('click', function() { history.back(); });
 			document.getElementById('back-btn-served').addEventListener('click', function() { history.back(); });
+			document.getElementById('back-btn-appetite').addEventListener('click', function() { history.back(); });
 			document.getElementById('back-btn-macbeth').addEventListener('click', function() { history.back(); });
 			document.getElementById('back-btn-house').addEventListener('click', function() { history.back(); });
 			document.getElementById('back-btn-interior').addEventListener('click', function() { history.back(); });
@@ -828,6 +860,7 @@
 			document.getElementById('hp-trespass').addEventListener('click', function() { showView('trespass', true); });
 			document.getElementById('hp-dance').addEventListener('click', function() { showView('dance', true); });
 			document.getElementById('hp-served').addEventListener('click', function() { showView('served', true); });
+			document.getElementById('hp-appetite').addEventListener('click', function() { showView('appetite', true); });
 			document.getElementById('hp-macbeth').addEventListener('click', function() { showView('macbeth', true); });
 			document.getElementById('hp-house').addEventListener('click', function() { showView('house', true); });
 			document.getElementById('hp-interior').addEventListener('click', function() { showView('interior', true); });
