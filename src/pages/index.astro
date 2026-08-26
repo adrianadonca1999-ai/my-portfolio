@@ -228,6 +228,10 @@
 
 			<p class="proj-synopsis">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
 
+			<div class="proj-hero" id="trespass-hero">
+				<img src="/assets/09.jpg" data-credits="Producers: Adriana Donca, Laura Alvarez / Director: Laura Alvarez / DP: Geffen Shichor / Production Designer: Adriana Donca" />
+			</div>
+
 			<hr class="proj-rule" />
 
 			<div class="proj-section proj-section-wide">
@@ -324,6 +328,10 @@
 
 			<p class="proj-synopsis">The Dance of the Seven Veils is a short film that combines live-action performance with digitally created environments. Inspired by Oscar Wilde's play, it reimagines Salome's ritual dance as a journey of transformation and decay. The film begins inside a grand palace that is slowly collapsing. As Salome dances, her veils become wet and cling to her body, turning from symbols of beauty into instruments of suffocation. At the same time, a dark desert hidden beneath the palace is gradually revealed, while the architecture around her starts to disappear. As the space dissolves, Salome begins to sink inside desert sand. Her body slowly vanishes piece by piece until only her head remains. Through the collapse of both body and architecture, the film explores themes of desire, mortality, and the loss of identity.</p>
 
+			<div class="proj-hero" id="dance-hero">
+				<img src="/assets/SV_02.png" data-credits="Final Still / The Dance of the Seven Veils" />
+			</div>
+
 			<hr class="proj-rule" />
 
 			<div class="proj-section proj-section-wide">
@@ -333,7 +341,7 @@
 					<img src="/assets/Donca_Adriana_3_Model_Digital_2_The_Dance_of_the_Seven_Veil_Short_Film.png" data-credits="Final Still / The Dance of the Seven Veils" />
 					<img src="/assets/Donca_Adriana_9_Other_Optional_Images_1.png" data-credits="Final Still / The Dance of the Seven Veils" />
 					<img src="/assets/SV_02.png" data-credits="Final Still / The Dance of the Seven Veils" />
-					<img src="/assets/dance-final-01.jpeg" data-credits="Final Still / The Dance of the Seven Veils" />
+					<img src="/assets/WhatsApp%20Image%202026-07-29%20at%203.16.52%20PM%20(3).jpeg" data-credits="Final Still / The Dance of the Seven Veils" />
 					<img src="/assets/dance-final-02.jpeg" data-credits="Final Still / The Dance of the Seven Veils" />
 					<img src="/assets/dance-final-03.jpeg" data-credits="Final Still / The Dance of the Seven Veils" />
 					<img src="/assets/dance-final-04.jpeg" data-credits="Final Still / The Dance of the Seven Veils" />
@@ -364,6 +372,8 @@
 					<img src="/assets/Palace_view_render.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
 					<img src="/assets/dance_render_02.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
 					<img src="/assets/HighresScreenshot00010.jpg" data-credits="3D Render: Adriana Donca / Unreal Engine" />
+					<img src="/assets/Storyboard-waltz-deconstructing.JPG" data-credits="Storyboarding: Adriana Donca / The Dance of the Seven Veils" />
+					<img src="/assets/Storyboard-waltz%20dance%20pace.jpg" data-credits="Storyboarding: Adriana Donca / The Dance of the Seven Veils" />
 				</div>
 			</div>
 
@@ -928,9 +938,11 @@
 				});
 			}
 
+			initGrid('trespass-hero');
 			initGrid('stills-grid');
 			initGrid('setphoto-grid');
 			initGrid('process-grid');
+			initGrid('dance-hero');
 			initGrid('dance-final-grid');
 			initGrid('dance-process-grid');
 			initGrid('dance-ue-grid');
@@ -1934,6 +1946,19 @@
 		text-transform: uppercase;
 		color: rgba(0,0,0,0.3);
 		margin-bottom: 1rem;
+	}
+
+	.proj-hero {
+		width: 100%;
+		max-width: 1600px;
+		padding: 0.5rem 0 2.5rem;
+	}
+	.proj-hero img {
+		width: 100%;
+		max-height: 88vh;
+		object-fit: cover;
+		display: block;
+		cursor: zoom-in;
 	}
 
 	/* ── Film Stills grid ── */
