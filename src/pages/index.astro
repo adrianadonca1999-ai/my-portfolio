@@ -25,7 +25,7 @@
 		<div class="about-panel" id="about-panel">
 			<header class="site-header">
 				<h1 class="site-name">Adriana Donca</h1>
-				<p class="site-subtitle">Production Designer</p>
+				<p class="site-subtitle">Production Designer / Art Director</p>
 				<hr class="site-divider" />
 				<nav class="site-nav">
 					<a href="#" id="about-btn-inner">About</a>
@@ -172,7 +172,7 @@
 		<div class="contact-panel" id="contact-panel">
 			<header class="site-header">
 				<h1 class="site-name">Adriana Donca</h1>
-				<p class="site-subtitle">Production Designer</p>
+				<p class="site-subtitle">Production Designer / Art Director</p>
 				<hr class="site-divider" />
 				<nav class="site-nav">
 					<a href="#" id="contact-about-btn">About</a>
@@ -229,7 +229,9 @@
 			<p class="proj-synopsis">A grieving woman living in a decaying apartment building becomes obsessed with her neighbor. As she secretly watches the life unfolding through the cracks in the wall, her longing for connection spirals into a dangerous fixation with horrifying consequences.</p>
 
 			<div class="proj-hero" id="trespass-hero">
-				<img src="/assets/09.jpg" data-credits="Producers: Adriana Donca, Laura Alvarez / Director: Laura Alvarez / DP: Geffen Shichor / Production Designer: Adriana Donca" />
+				<div class="proj-hero-video">
+					<iframe src="https://drive.google.com/file/d/1VgXrxHc5A3YqIcZq1L9HFf4Fd3DCiuKQ/preview" title="Trespass" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+				</div>
 			</div>
 
 			<hr class="proj-rule" />
@@ -329,7 +331,9 @@
 			<p class="proj-synopsis">The Dance of the Seven Veils is a short film that combines live-action performance with digitally created environments. Inspired by Oscar Wilde's play, it reimagines Salome's ritual dance as a journey of transformation and decay. The film begins inside a grand palace that is slowly collapsing. As Salome dances, her veils become wet and cling to her body, turning from symbols of beauty into instruments of suffocation. At the same time, a dark desert hidden beneath the palace is gradually revealed, while the architecture around her starts to disappear. As the space dissolves, Salome begins to sink inside desert sand. Her body slowly vanishes piece by piece until only her head remains. Through the collapse of both body and architecture, the film explores themes of desire, mortality, and the loss of identity.</p>
 
 			<div class="proj-hero" id="dance-hero">
-				<img src="/assets/SV_02.png" data-credits="Final Still / The Dance of the Seven Veils" />
+				<div class="proj-hero-video">
+					<iframe src="https://drive.google.com/file/d/1Vj7H0oyxPJzCKDw9sIXx4RV7JWOjxq98/preview" title="The Dance of the Seven Veils" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+				</div>
 			</div>
 
 			<hr class="proj-rule" />
@@ -404,7 +408,9 @@
 			<p class="proj-synopsis">A 30-second spec campaign for Gentle Monster that reimagines sunglasses as a Michelin-starred dining experience. Blending on-set production with VFX, the film transforms the backstage rituals of fine dining into a meticulous service performance, where each pair of sunglasses is prepared with clinical precision and presented like the evening's signature course.</p>
 
 			<div class="proj-hero" id="served-hero">
-				<img src="/assets/served_hero_image.png" data-credits="Final Still / SERVED" />
+				<div class="proj-hero-video">
+					<iframe src="https://drive.google.com/file/d/1wd0KTY9u565atMwxIQBZkUpR2PnmThyB/preview" title="SERVED" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+				</div>
 			</div>
 
 			<hr class="proj-rule" />
@@ -452,7 +458,9 @@
 			<p class="proj-synopsis">The film explores noise cancellation as both a sonic and visual experience. Inside a chaotic office, one character remains calm, protected by his earphones. Through one continuous pull-out shot, an intimate composition gradually reveals the disorder surrounding him. Lighting becomes a visual expression of noise cancellation: a warm, dramatic glow creates his private world, while removing the earphones returns him to the flat fluorescent reality of the office. The visual language draws from Caravaggio's tenebrism, Georges de La Tour's candlelit intimacy, and Gregory Crewdson's staged photography, contrasting the chaos of everyday life with a temporary, personal space of calm.</p>
 
 			<div class="proj-hero" id="appetite-hero">
-				<img src="/assets/AP_03.png" data-credits="Final Still / Appetite" />
+				<div class="proj-hero-video">
+					<iframe src="https://www.youtube.com/embed/dPB5DjMyOSg?start=1" title="Appetite" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
 			</div>
 
 			<hr class="proj-rule" />
@@ -735,7 +743,7 @@
 			<div class="hp-right">
 				<header class="site-header">
 					<h1 class="site-name">Adriana Donca</h1>
-					<p class="site-subtitle">Production Designer</p>
+					<p class="site-subtitle">Production Designer / Art Director</p>
 					<hr class="site-divider" />
 					<nav class="site-nav">
 						<a href="#" id="about-btn">About</a>
@@ -1989,6 +1997,20 @@
 		object-fit: cover;
 		display: block;
 		cursor: zoom-in;
+	}
+	.proj-hero-video {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		max-height: 88vh;
+	}
+	.proj-hero-video iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		border: 0;
 	}
 
 	/* ── Film Stills grid ── */
